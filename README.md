@@ -1,7 +1,7 @@
 # Origin Framework
 Origin 架构主要是为解决入门级开发人员在PHP开发中的基础应用问题： 
 
-![欢迎页](https://github.com/shenqiwei/origin_framework/blob/master/Screenshot/welcome.png)
+![欢迎页](https://github.com/shenqiwei/origin_readme/tree/master/image/welcome.png)
 ## 基本说明：
 1) Origin使用PHP7.3及以下版本进行开发，部分功能可支持到5.4版本，7.4及以上版本将作为独立版本支持
 
