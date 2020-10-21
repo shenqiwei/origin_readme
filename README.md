@@ -100,17 +100,20 @@ Origin PHP framework 2020.9.16 至2020.10.18更新后版本以将部分原有仿
     <tr>
         <td colspan="2"></td>
         <td colspan="5">┗library</td>
-        <td colspan="2">实例函数目录</td>
+        <td>实例函数目录</td>
+        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/origin/library">访问文档</a></td>
     </tr>
     <tr>
         <td colspan="2"></td>
         <td colspan="5">┗package</td>
-        <td colspan="2">功能类封装目录</td>
+        <td>功能类封装目录</td>
+        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/origin/package">访问文档</a></td>
     </tr>
     <tr>
         <td colspan="2"></td>
         <td colspan="5">┗template</td>
-        <td colspan="2">内核信息视图模板目录</td>
+        <td>内核信息视图模板目录</td>
+        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/origin/template">访问文档</a></td>
     </tr>
     <tr>
         <td>#</td>
