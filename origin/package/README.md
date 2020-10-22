@@ -1,4 +1,3 @@
-<span id='origin_package'></span>
 ## Package 功能封装 [<a href="https://github.com/shenqiwei/origin_readme">返回</a>]
 Origin ver 1.0以后版本都会现有结构为基础进行升级加强，现有结构取消了原有按功能分类方式，使用同一命名空间结构
 

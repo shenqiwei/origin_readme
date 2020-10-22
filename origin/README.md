@@ -1,4 +1,3 @@
-<span id='origin_top'></span>
 ## Origin 入口文件
 origin入口文件包含origin基本结构调用全部初始化内容常量，部分常量的设置将影响origin部分功能的实现
 

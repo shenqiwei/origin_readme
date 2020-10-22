@@ -1,4 +1,3 @@
-<span id='origin_method'></span>
 ## library 实例封装 [<a href="https://github.com/shenqiwei/origin_readme">返回</a>]
 Origin ver 1.0以后取消部分应用实例封装，仅保留了6基本函数用于完成一半web开发内容需求
 

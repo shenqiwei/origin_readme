@@ -1,4 +1,3 @@
-<span id='origin_top'></span>
 ## Origin 应用目录[<a href="https://github.com/shenqiwei/origin_readme">返回</a>]
 
 #### 快速通道
