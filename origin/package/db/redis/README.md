@@ -22,31 +22,31 @@ Redis函数列表(redis主包内包含部分功能函数，与子包掉能用方
     <tr>
         <td>redis kv操作封装  </td>
         <td>$_key = $_redis->key()</td>
-        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/common/config">访问文档</a></td>
+        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/origin/package/db/redis/key">访问文档</a></td>
     </tr>
     <tr>
         <td>redis字符串操作封装</td>
         <td>$_str = $_redis->string()</td>
-        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/common/config">访问文档</a></td>
+        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/origin/package/db/redis/string">访问文档</a></td>
     </tr>
     <tr>
         <td>redis集合操作封装</td>
         <td>$set = $_redis->set()</td>
-        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/common/config">访问文档</a></td>
+        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/origin/package/db/redis/set">访问文档</a></td>
     </tr>
     <tr>
         <td>redis哈希表操作封装</td>
         <td>$_hash = $_redis->hash()</td>
-        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/common/config">访问文档</a></td>
+        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/origin/package/db/redis/hash">访问文档</a></td>
     </tr>
     <tr>
         <td>redis类数组操作封装</td>
         <td>$_list = $_redis->lists()</td>
-        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/common/config">访问文档</a></td>
+        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/origin/package/db/redis/list">访问文档</a></td>
     </tr>
     <tr>
         <td>redis序列化操作封装</td>
         <td>$_seq = $_redis->seq()</td>
-        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/common/config">访问文档</a></td>
+        <td><a href="https://github.com/shenqiwei/origin_readme/tree/master/origin/package/db/redis/sequence">访问文档</a></td>
     </tr>
 </table>
