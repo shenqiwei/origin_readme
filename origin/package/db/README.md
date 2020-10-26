@@ -8,7 +8,7 @@ Origin DB模块使用静态方式进行数据库对象封装
 `use Origin\Package\DB;`
 `$_db = DB::数据库(数据源配置名)`：数据源配置名称对应的时config中数据库配置项`DATA_NAME`内容
 
-关系型数据库
+#### 关系型数据库
 > `mysql`：`DB::mysql($connect_name)` mariaDB与mysql驱动结构完全一致，故引用方法使用mysql     
 > `SQL server`：`DB::mssql($connect_name)`    
 > `PostgreSQL`：`DB::pgsql($connect_name)`    
@@ -159,9 +159,304 @@ Origin DB模块使用静态方式进行数据库对象封装
 
 `$_db->getErrorMsg()`：返回错误信息        
 
-非关系型数据库    
+#### 非关系型数据库    
 > `Mongodb`：`DB::mongo($connect_name)`    
 > 当前结构模块完善中，暂不满足应用开发要求
 
 > `Redis`：`DB::redis($connect_name)`   
-> Origin ver 1.0版本后 redis封装结构集成了6个功能子包  
+> Origin ver 1.0版本后 redis封装结构集成了6个功能子包   
+>
+> `$_redis->DB::redis(数据源名称)`
+
+Redis函数列表(redis主包内包含部分功能函数，与子包掉能用方式不同)    
+> 主包：     
+> `$_redis->flush($obj)`：执行Redis刷新    
+> `$_redis->selectDB($db)`：切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值     
+> `$_redis->saveTime()`：最近一次 Redis 成功将数据保存到磁盘上的时间，以 UNIX 时间戳格式表示    
+> `$_redis->time()`：返回redis服务器时间    
+> `$_redis->dbSize()`：返回数据库容量使用信息    
+> `$_redis->bgAOF()`：异步执行一个 AOF（AppendOnly File） 文件重写操作    
+> `$_redis->bgSave()`：异步保存当前数据库的数据到磁盘    
+> `$_redis->save()`：保存当前数据库的数据到磁盘    
+
+> 子包：是根据其使用对象进行的功能封装
+> `$_key = $_redis->key()`：redis kv操作封装     
+
+>> `$_key->del($key)`：删除元素对象内容    
+>>> `$key`：键名    
+>
+>> `$_key->dump($key)`：序列化元素对象内容    
+>>> `$key`：键名    
+>
+>> `$_key->setTSC($key,$timestamp)`：使用时间戳设置元素对象生命周期     
+>>> `$key`：键名    
+>>> `$timestamp`：（int）时间戳    
+>
+>> `$_key->setSec($key,$second)`：使用秒计时单位设置元素对象生命周期    
+>>>`$key`：键名    
+>>> `$second`：（int）时间s    
+>
+>> `$_key->setTSM($key,$timestamp)`：使用毫秒时间戳设置元素对象生命周期    
+>>>`$key`：键名    
+>>> `$timestamp`：（int）时间戳    
+>
+>> `$_key->setMil($key,$millisecond)`：使用毫秒计时单位设置元素对象生命周期    
+>>>`$key`：键名    
+>>> `$millisecond`：（int）时间ms    
+>
+>> `$_key->rmCycle($key)`：移除元素目标生命周期限制    
+>>> `$key`：键名    
+>
+>> `$_key->remaining($key)`：获取元素对象剩余周期时间(毫秒)     
+>>> `$key`：键名    
+>
+>> `$_key->remain($key)`：获取元素对象剩余周期时间(秒)     
+>>> `$key`：键名    
+>
+>> `$_key->keys($closeKey)`：获取搜索相近元素对象键     
+>>> `$closeKey`：相近元素对象（key*）    
+>
+>> `$_key->randKey()`：随机返回元素键    
+>
+>> `$_key->rnKey($key,$newKey)`：重命名元素对象    
+>>> `$key`：键名    
+>>> `$newKey`：重新命名    
+>
+>> `$_key->irnKey($key,$newKey)`：非重名元素对象重命名    
+>>>`$key`：键名    
+>>> `$newKey`：重新命名    
+>
+>> `$_key->type($key)`：获取元素对象内容数据类型
+>>>`$key`：键名    
+>
+>> `$_key->inDB($key,$database)`：将元素对象存入数据库    
+>>>`$key`：键名    
+
+> `$_str = $_redis->string()`：redis字符串操作封装     
+
+>> `$_str->create($key,$value)`：创建元素对象值内容    
+>>> `$key`：被创建对象键名    
+>>> `$value`：被创建元素对象内容值    
+>
+>> `$_str->createSec($key,$value,$second)`：创建元素对象，并设置生命周期    
+>>> `$key`：被创建对象键名    
+>>> `$value`：被创建元素对象内容值    
+>>> `$second`：生命周期时间（second）    
+>
+>> `$_str->createOnly($key,$value)`：非覆盖创建元素对象值    
+>>> `$key`：被创建对象键名    
+>>> `$value`：被创建元素对象内容值    
+>
+>> `$_str->createMil($key,$value,$milli)`：创建元素对象并，设置生命周期    
+>>> `$key`：被创建对象键名    
+>>> `$value`：被创建元素对象内容值    
+>>> `$milli`：生命周期时间（milli）    
+>
+>> `$_str->get($key)`：获取值内容    
+>>> `$key`：对象键名    
+>
+>> `$_str->append($key,$value)`：叠加（创建）对象元素值内容    
+>>> `$key`：对象键名    
+>>> `$value`：被创建元素对象内容值    
+>
+>> `$_str->cBit($key,$offset,$value)`：设置元素对象偏移值    
+>>> `$key`：对象键名    
+>>> `$offset`：被创建元素对象内容值     
+>>> `$value`：偏移系数    
+>
+>> `$_str->gBit($key,$offset)`：获取元素对象偏移值    
+>>> `$key`：被创建对象键名    
+>>> `$offset`：被创建元素对象内容值     
+>
+>> `$_str->getLen($key)`：检索元素对象值内容长度    
+>>> `$key`：被创建对象键名    
+>
+>> `$_str->getRange($key,$start,$end)`：     
+<table>
+     <tr>
+         <td>说明</td>
+         <td colspan="3">检索元素对象值（区间截取）内容，（大于0的整数从左开始执行，小于0的整数从右开始执行）</td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$key</td>
+         <td>string</td>
+         <td>对象键名</td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$start</td>
+         <td>int</td>
+         <td>起始位置参数，默认值 1 </td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$end</td>
+         <td>int1</td>
+         <td>结束位置参数，默认值 -1</td>
+     </tr>
+     <tr>
+         <td>返回值</td>
+         <td colspan="3"></td>
+     </tr>
+     <tr>
+         <td>实例</td>
+         <td colspan="3">application</td>
+     </tr>
+  </table> 
+
+`$_str->getRollback($key,$value)`：替换原有值内容，并返回原有值内容     
+<table>
+     <tr>
+         <td>说明</td>
+         <td colspan="3">对应元素（数据）指定值自减 </td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$key</td>
+         <td>string</td>
+         <td>对象键名</td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$value</td>
+         <td>mixed 任意类型</td>
+         <td>对象内容值</td>
+     </tr>
+     <tr>
+         <td>返回值</td>
+         <td colspan="3"></td>
+     </tr>
+     <tr>
+         <td>实例</td>
+         <td colspan="3">application</td>
+     </tr>
+  </table> 
+  
+`$_str->createList($columns)`：创建元素列表    
+<table>
+       <tr>
+           <td>说明</td>
+           <td colspan="3">创建元素列表</td>
+       </tr>
+       <tr>
+           <td>*</td>
+           <td>$columns</td>
+           <td>array</td>
+           <td>对应元素列表数组</td>
+       </tr>
+       <tr>
+           <td>返回值</td>
+           <td colspan="3"></td>
+       </tr>
+       <tr>
+           <td>实例</td>
+           <td colspan="3">application</td>
+       </tr>
+    </table> 
+
+`$_str->createListOnly($columns)`：      
+<table>
+      <tr>
+          <td>说明</td>
+          <td colspan="3">非替换创建元素列表</td>
+      </tr>
+      <tr>
+          <td>*</td>
+          <td>$columns</td>
+          <td>array</td>
+          <td>对应元素列表数组</td>
+      </tr>
+      <tr>
+          <td>返回值</td>
+          <td colspan="3"></td>
+      </tr>
+      <tr>
+          <td>实例</td>
+          <td colspan="3">application</td>
+      </tr>
+   </table> 
+
+`$_str->getList($keys)`：检索元素列表     
+<table>
+     <tr>
+         <td>说明</td>
+         <td colspan="3">检索元素列表</td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$keys</td>
+         <td>array</td>
+         <td>对应元素列表数组</td>
+     </tr>
+     <tr>
+         <td>返回值</td>
+         <td colspan="3"></td>
+     </tr>
+     <tr>
+         <td>实例</td>
+         <td colspan="3">application</td>
+     </tr>
+  </table> 
+
+`$_str->plus($key,$increment)`：    
+<table>
+     <tr>
+         <td>说明</td>
+         <td colspan="3">对应元素（数据）指定值自增</td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$key</td>
+         <td>string</td>
+         <td>对象键名</td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$increment</td>
+         <td>int</td>
+         <td>自增系数值，默认值 1</td>
+     </tr>
+     <tr>
+         <td>返回值</td>
+         <td colspan="3"></td>
+     </tr>
+     <tr>
+         <td>实例</td>
+         <td colspan="3">application</td>
+     </tr>
+  </table>  
+
+`$_str->minus($key,$decrement=1)`：     
+<table>
+     <tr>
+         <td>说明</td>
+         <td colspan="3">对应元素（数据）指定值自减 </td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$key</td>
+         <td>string</td>
+         <td>对象键名</td>
+     </tr>
+     <tr>
+         <td>*</td>
+         <td>$increment</td>
+         <td>int</td>
+         <td>自减系数值，默认值 1 </td>
+     </tr>
+     <tr>
+         <td>返回值</td>
+         <td colspan="3"></td>
+     </tr>
+     <tr>
+         <td>实例</td>
+         <td colspan="3">application</td>
+     </tr>
+  </table>  
+
+> `$_redis->set()`：redis集合操作封装    
+> `$_redis->hash()`：redis哈希表操作封装    
+> `$_redis->lists()`：redis类数组操作封装    
+> `$_redis->seq()`：redis序列化操作封装    
+>
