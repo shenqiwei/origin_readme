@@ -524,3 +524,10 @@
          <td colspan="3">暂无</td>
      </tr>
   </table>
+
+
+说明|返回有序集中，成员的分数值  
+*|$key|string|检索对象键名
+*|$value|mixed|值
+返回值|从redis直接返回结果内容，如果访问失败或nil内容则返回 null
+实例|暂无
