@@ -5,7 +5,7 @@
 
 #### 函数说明
 
-`$_key->del($key)`
+> `$_key->del($key)`
 <table>
      <tr>
          <td>说明</td>
@@ -15,7 +15,7 @@
          <td>*</td>
          <td>$key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>返回值</td>
@@ -27,7 +27,7 @@
      </tr>
   </table> 
   
-`$_key->dump($key)`
+> `$_key->dump($key)`
 <table>
      <tr>
          <td>说明</td>
@@ -37,7 +37,7 @@
          <td>*</td>
          <td>$key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>返回值</td>
@@ -49,7 +49,7 @@
      </tr>
   </table> 
   
-`$_key->setTSC($key,$timestamp)`
+> `$_key->setTSC($key,$timestamp)`
 <table>
      <tr>
          <td>说明</td>
@@ -59,7 +59,7 @@
          <td>*</td>
          <td>$key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>*</td>
@@ -77,7 +77,7 @@
      </tr>
   </table> 
   
-`$_key->setSec($key,$second)`
+> `$_key->setSec($key,$second)`
 <table>
      <tr>
          <td>说明</td>
@@ -87,7 +87,7 @@
          <td>*</td>
          <td>$key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>*</td>
@@ -105,7 +105,7 @@
      </tr>
   </table> 
   
-`$_key->setTSM($key,$timestamp)`
+> `$_key->setTSM($key,$timestamp)`
 <table>
      <tr>
          <td>说明</td>
@@ -115,7 +115,7 @@
          <td>*</td>
          <td>$key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>*</td>
@@ -133,7 +133,7 @@
      </tr>
   </table> 
   
-`$_key->setMil($key,$millisecond)`
+> `$_key->setMil($key,$millisecond)`
 <table>
      <tr>
          <td>说明</td>
@@ -143,7 +143,7 @@
          <td>*</td>
          <td>$key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>*</td>
@@ -161,7 +161,7 @@
      </tr>
   </table> 
   
- `$_key->setMil($key,$millisecond)`
+ > `$_key->setMil($key,$millisecond)`
  <table>
       <tr>
           <td>说明</td>
@@ -171,7 +171,7 @@
           <td>*</td>
           <td>$key</td>
           <td>string</td>
-          <td>被检索对象键名</td>
+          <td>检索对象键名</td>
       </tr>
       <tr>
           <td>*</td>
@@ -189,7 +189,7 @@
       </tr>
    </table> 
    
-`$_key->rmCycle($key)`
+> `$_key->rmCycle($key)`
 <table>
      <tr>
          <td>说明</td>
@@ -199,7 +199,7 @@
          <td>*</td>
          <td>$key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>返回值</td>
@@ -211,7 +211,7 @@
      </tr>
   </table> 
   
-`$_key->remaining($key)`
+> `$_key->remaining($key)`
 <table>
      <tr>
          <td>说明</td>
@@ -221,7 +221,7 @@
          <td>*</td>
          <td>$key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>返回值</td>
@@ -233,7 +233,7 @@
      </tr>
   </table> 
   
-`$_key->remain($key)`
+> `$_key->remain($key)`
 <table>
      <tr>
          <td>说明</td>
@@ -243,7 +243,7 @@
          <td>*</td>
          <td>$key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>返回值</td>
@@ -255,7 +255,7 @@
      </tr>
   </table> 
   
-`$_key->keys($closeKey)`
+> `$_key->keys($closeKey)`
 <table>
      <tr>
          <td>说明</td>
@@ -277,7 +277,7 @@
      </tr>
   </table> 
   
-`$_key->randKey()`
+> `$_key->randKey()`
 <table>
      <tr>
          <td>说明</td>
@@ -293,7 +293,7 @@
      </tr>
   </table> 
 
-`$_key->rnKey($key,$newKey)`
+> `$_key->rnKey($key,$newKey)`
 <table>
      <tr>
          <td>说明</td>
@@ -303,7 +303,7 @@
          <td>*</td>
          <td>$Key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>*</td>
@@ -321,7 +321,7 @@
      </tr>
   </table>
   
-`$_key->irnKey($key,$newKey)`
+> `$_key->irnKey($key,$newKey)`
 <table>
      <tr>
          <td>说明</td>
@@ -331,7 +331,7 @@
          <td>*</td>
          <td>$Key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>*</td>
@@ -349,7 +349,7 @@
      </tr>
   </table>
 
-`$_key->type($key)`
+> `$_key->type($key)`
 <table>
      <tr>
          <td>说明</td>
@@ -359,7 +359,7 @@
          <td>*</td>
          <td>$Key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>返回值</td>
@@ -371,7 +371,7 @@
      </tr>
   </table>
 
-`$_key->inDB($key,$database)`
+> `$_key->inDB($key,$database)`
 <table>
      <tr>
          <td>说明</td>
@@ -381,7 +381,7 @@
          <td>*</td>
          <td>$Key</td>
          <td>string</td>
-         <td>被检索对象键名</td>
+         <td>检索对象键名</td>
      </tr>
      <tr>
          <td>*</td>
